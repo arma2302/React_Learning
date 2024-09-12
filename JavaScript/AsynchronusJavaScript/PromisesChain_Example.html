@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Promises chain (displayData)</h1>
+    <button id="btn">Click Here to Display Data</button>
+
+    <script>
+      let array = [];
+
+      let btn = document.getElementById("btn");
+
+      btn.addEventListener("click", function () {
+        let dataObj = { name: "arma", city: "ahmedabad", age: 22 };
+        array.push(dataObj);
+
+        let fetchData = new Promise((res, rej) => {
+          try {
+            res(array);
+            return res;
+          } catch (error) {
+            console.log(error.message);
+          }
+        }).then((data) => {
+          data.map((e, i) => {
+            let h2 = document.createElement("h2");
+            h2.textContent = e.name + e.age;
+            document.body.append(h2);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

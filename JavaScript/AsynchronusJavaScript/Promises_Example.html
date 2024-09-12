@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let msg = true;
+
+      let printMsg = new Promise((resolve, reject) => {
+        if (msg) {
+          resolve("Msg is there");
+        } else {
+          reject("no msg found");
+        }
+      });
+
+      console.log(printMsg); // fullfilled msg is there
+    </script>
+  </body>
+</html>
