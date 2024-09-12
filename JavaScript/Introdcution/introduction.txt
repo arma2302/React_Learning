@@ -1,0 +1,24 @@
+1. what is javascript?
+js is a scriptting language,used to add features in websites,it is s dynamic type language.
+it uses Dom which means Document object model to update the document.
+it enabales you to create dynamic updates to your website.
+
+2.History of javascript ?
+Brendan Eich developed JavaScript, Initially called Mocha, then LiveScript, it finally became known as JavaScript.
+first implemented on netscape navigator , which is most popular browser at that time.
+Over the years, JavaScript’s popularity grew, and it was used to create a variety of web applications,
+including online games, dynamic menus, and form validation. A new version, ECMAScript 4,
+was planned in 2002 but was abandoned due to disagreements among browser vendors.
+
+3. Javascript versions.
+In 1997, JavaScript became a standard, known as ECMAScript. Since then, there have been many versions of ECMAScript, with new features added over the years. Each version after 2016 is named after the year it was released,
+like ECMAScript 2016, ECMAScript 2017, and so on.
+
+4. How to run javascripts?
+
+you can install the node js 
+
+Install Node.js
+Now simply open the command line in the same directory as the index.js script you created (VS Code will do this automatically with the integrated terminal).
+or you can write it in script tag in html and can run on yout browser.
+

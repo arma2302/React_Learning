@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>setTimeout()</h1>
+    <p>
+      whenever you want to perform some task after a delay you can use
+      setTimeout function
+    </p>
+    <p>clearTimeou is used to clear the timeout</p>
+    <p>it runs only once after a given delay time</p>
+
+    <script>
+      setTimeout(() => {
+        console.log("Hellooo");
+      }, 2000);
+
+      //   let a = setTimeout(() => {
+      //     alert("hello");
+      //   }, 1000);
+
+      //   let permisson = prompt("");
+
+      //   if (permisson == "n") {
+      //     clearTimeout(a);
+      //   }
+
+      function greet(a, b) {
+        console.log("sum of two numbers ", a + b);
+      }
+      setTimeout(greet, 3000, 2, 6);
+    </script>
+  </body>
+</html>

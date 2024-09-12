@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section>
+      <h2>this keyword in wgloal scope</h2>
+      <p>
+        global object , global object is diferent everywhere, here on browser
+        the global object is window object
+      </p>
+      <h2>this keyword inside a function</h2>
+      <p>in strict mode its undefined , in non-strict mode its window</p>
+      <p>
+        whenever the value of this keyword is null or undefined it is replaced
+        with window object
+      </p>
+      <h2>this keyword inside arrow function</h2>
+      <p>arrow functions does not have their own this keyword</p>
+      <p>
+        they take the value of their lexical environment where they are enclosed
+      </p>
+      <p>it will take the value according to how the object is written</p>
+      <p>
+        if the object is written in the global context it will refer to window
+        object
+      </p>
+      <h2>this keyword in event listner</h2>
+      <p>it will refer to that html element od which the event is perfomed</p>
+      <button onclick="alert(this)">click me</button>
+    </section>
+    <script>
+      // this keyword in global scope , depend upon where you are running the code
+      console.log(this); // global objects
+      //this keyword in function
+      function x() {
+        console.log(this); // value depends on strict / non-strict mode
+        // in strict mode its undefined , in non-strict mode its window
+      }
+      x();
+      //this keyword inside arrow function
+      let obj = {
+        name: "abc",
+        x: () => {
+          console.log(this);
+        },
+      };
+      obj.x(); // window object because the obj is written in global space
+
+      let obj2 = {
+        name: "abc",
+        x: function () {
+          const printName = () => {
+            console.log(this.name);
+          };
+          printName();
+        },
+      };
+      obj2.x(); // will print the name because the function is written in a function which is in object so this keyword will refer to object
+    </script>
+  </body>
+</html>

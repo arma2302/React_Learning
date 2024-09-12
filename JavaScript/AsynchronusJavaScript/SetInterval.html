@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setInterval</title>
+  </head>
+  <body>
+    <h1>setInterval()</h1>
+    <p>in this a function will run after a given delay time on repeat.</p>
+
+    <script>
+      //   let a = setInterval(() => {
+      //     console.log("interval");
+      //   }, 1000);
+      //   console.log(a); // inerval id
+
+      function newFunction(a, b) {
+        console.log("i am running after every delay", a + b);
+      }
+      setInterval(newFunction, 2000, 3, 6);
+    </script>
+  </body>
+</html>

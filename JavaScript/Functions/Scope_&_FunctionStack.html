@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      The Call Stack The Stack is a mechanism for interpreted languages, like
+      Javascript, which keeps track of a machine’s place in a script and
+      represents the static memory of a machine. Snippets of code are are queued
+      in a First-In, Last-Out order. Think of it like stacking boxes. We won’t
+      be able to remove the first box until we remove any boxes we later placed
+      on top of that box and we will have to search the top box before we can
+      search the ones below. This is important to keep in mind as we explore the
+      way our programs organize and access data.
+
+      <script>
+        class stack {
+          constructor() {
+            this.item = [];
+          }
+
+          push(number) {
+            this.item.push(number);
+          }
+          pop() {
+            if (this.item.length === 0);
+            {
+              return "call stack is empty;";
+            }
+            return this.item.pop();
+          }
+
+          peek() {
+            return this.item[this.item.length - 1];
+          }
+          isEmpty() {
+            return this.item.length === 0;
+          }
+          size() {
+            return this.item.length;
+          }
+        }
+
+        let myCallstack = new stack();
+        myCallstack.push(5);
+        myCallstack.push(10);
+        console.log(myCallstack.peek());
+        console.log(myCallstack.size());
+      </script>
+    </p>
+  </body>
+</html>

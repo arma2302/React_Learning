@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      weakMap is a new data structure collection introduced in ES6. used to
+      store data in key value pair
+    </p>
+    <script>
+      let newMap = new WeakMap();
+
+      let obj1 = { name: "arma" };
+      let obj2 = { city: "ahmedabad" };
+
+      newMap.set(obj1, "object1");
+      newMap.set(obj2, "object2");
+
+      console.log(newMap);
+
+      newMap.delete(obj2);
+      console.log(newMap);
+      newMap.set(obj2);
+      console.log(newMap.get(obj1));
+      console.log(newMap.has(obj2));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //global scope :ariables declared outside of all functions are known as global variables and in the global scope. Global variables are accessible anywhere in the program.
+      // example:
+      let name = "arma";
+      let designation = "React intern";
+      function greet(intro) {
+        function introduction() {
+          //this unction can access the variable declared outside the function
+          console.log(`hello ${intro} i am ${name} and i am a ${designation}`);
+        }
+        introduction();
+      }
+      greet("EveryOne");
+
+      //block scope : the variable which is spefically declred in a block and  can not be used outside of it
+      //example:
+      {
+        let a = 10;
+      }
+      //   console.log(a); //Scope.html:28 Uncaught ReferenceError: a is not defined
+
+      //Function scope: Variables that are declared inside a function are called local variables and in the function scope. Local variables are accessible anywhere inside the function.
+
+      function isFucn() {
+        let name = "arma";
+        function innerFunc() {
+          // this function can use variablles declared in its outer scope it is also known as lexical scope
+          console.log(name);
+        }
+        innerFunc();
+      }
+      isFucn();
+    </script>
+  </body>
+</html>

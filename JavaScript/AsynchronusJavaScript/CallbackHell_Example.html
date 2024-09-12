@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 80%;
+        padding: 20px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .word {
+        width: auto;
+        padding: 10px;
+        color: black;
+        font-size: 40px;
+        transform: translateY(380px);
+        opacity: 1;
+        transition: all cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+      .animate {
+        transform: translateY(0px);
+        /* opacity: 1; */
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <h1 class="word">Hello!</h1>
+        <h1 class="word">ADDV</h1>
+        <h1 class="word">HealthTech</h1>
+        <h1 class="word">Solutions.</h1>
+      </div>
+    </section>
+    <!-- script -->
+    <script>
+      let words = document.querySelectorAll(".word");
+      console.log(words);
+
+      const animateAll = (animate) => {
+        setTimeout(() => {
+          animate(words[0]);
+          setTimeout(() => {
+            animate(words[1]);
+            setTimeout(() => {
+              animate(words[2]);
+              setTimeout(() => {
+                animate(words[3]);
+              }, 1000);
+            }, 1000);
+          }, 1000);
+        }, 1000);
+      };
+
+      const animate = (word) => {
+        word.classList.add;
+        ("animate");
+      };
+      animateAll(animate);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let array = [10, 20, 40, 50, 60];
+      // for each itreates an array and run the function on each element
+      array.forEach((element, index) => {
+        console.log(element * 2);
+      });
+      // map returns a new array and perform the function on elements.
+      let newArray = array.map((e, i) => {
+        return e + 10;
+      });
+      console.log(newArray);
+
+      //array reduce returns a single value
+
+      let reduceValue = array.reduce((acc, current, index) => {
+        return acc + current;
+      });
+      console.log(reduceValue);
+
+      // array find method will return the most fisrt element which matches the function condition
+
+      let find = array.find((element) => {
+        return element > 20;
+      });
+      console.log(find);
+
+      //array includes method it check wheather the value is in array or not
+
+      let includes = array.includes(20);
+      console.log(includes);
+    </script>
+  </body>
+</html>

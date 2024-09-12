@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Javascript variables</h1>
+    <p>
+      Three types of variables are there <br />var <br />let <br />
+      const
+    </p>
+    <script>
+      //   You can Re-declare ,Re-assign and reinitiallze same name variable using Var , it will not throw any error.
+      var name = "arma";
+      console.log(name, "First declaration");
+
+      var name = "Abcd";
+      console.log(name, "Second with same name");
+
+      name = "xyz";
+      console.log(name, "Third when reassigned");
+
+      //   while using let keyword you can not re decalre the same name variable but you can only re assign the value to it.
+
+      let a = 10;
+      console.log(a);
+      //   let a= 20 not applicable throws an error.
+      a = 30;
+      console.log(a);
+
+      //    when using Const variable  you can neither redeclare nor reassign .const means constant you can not change anything.
+
+      const greet = "Hello";
+      console.log(greet);
+
+      // hoisting with Var
+      console.log(msg); // we will get the undefined
+      var msg = "Hello";
+      console.log(msg);
+
+      // hositing with let
+      //   console.log(letHoisting); // cannnot access before intialization.
+      //   let letHoisting;
+
+      //intialization is not hoisted only declrations are.
+    </script>
+  </body>
+</html>

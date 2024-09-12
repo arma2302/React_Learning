@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //built in functions
+      //eval : evaluates the string and returns the value , eval(expression)
+      //parseInt
+      //parseFloat
+      //escape
+      //unescape
+
+      // eval()//
+      let num1 = 4;
+      let num2 = 5;
+      console.log(eval("num1+num2")); // checks the string expression and evaluates it.
+      console.log(eval(new String("num1+num2"))); // will return the string expression
+      console.log(eval("num1+num2") == eval("9")); // true
+
+      //parseInt()//
+      let num3 = "30";
+      console.log(parseInt(num3)); // returns a number data type conversion , parses a string arugument and returns a integer number.
+
+      //parseFloat()//
+      let num4 = "8392810.987896879";
+      console.log(parseFloat(num4)); //Parses a string argument and returns a floating point number.
+
+      //escape //: This function returns an encoded string.
+      let str = "hello how are you ??";
+      console.log(escape(str)); // output: hello%20how%20are%20you%20%3F%3F
+
+      // unescape()// this function return a u encoded string
+
+      let str1 = "hello%20how%20are%20you%20%3F%3F";
+      console.log(unescape(str1)); // output :hello how are you ??
+    </script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // recursion: function calls itself based on the condition, it needs a base case to stop the calling of a function.
+      //factorial
+      //   let n = prompt("enter a number to find its factorial");
+      let n = 5;
+      function factorial(n) {
+        console.log(n);
+
+        if (n <= 1) {
+          return 1;
+        }
+        return n * factorial(n - 1);
+      }
+      console.log(factorial(n));
+
+      //create an array with the rangeof numbers
+
+      function RangeArray(startNum, endNum) {
+        if (endNum < startNum) {
+          return [];
+        } else {
+          const numbers = RangeArray(startNum, endNum - 1);
+          numbers.push(endNum);
+          return numbers;
+        }
+      }
+      console.log(RangeArray(2, 5));
+
+      // display number
+      function count(num) {
+        console.log(num);
+        if (num > 1) {
+          num = num - 1;
+          count(num);
+        } else {
+          return;
+        }
+      }
+      count(4);
+    </script>
+  </body>
+</html>

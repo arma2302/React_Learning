@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+  </head>
+  <body>
+    <p>Array in javaScript</p>
+    <p>Array</p>
+    <p>Array is a data structure which allows you to store multiple values</p>
+    <p>each value is called as element , elements are acessed by the index.</p>
+    <p>index is a numeric value that indicates the position of an element</p>
+    <script>
+      let arr = [10, 20, "arma", "React"];
+      console.log(arr.length); // 4
+      console.log(arr.toString()); //
+      console.log(arr.join("*"));
+      let arr1 = [10, 20, [20, 50], [70]];
+      console.log(arr1.flat());
+      arr.push(20);
+      arr.pop();
+      arr.unshift();
+      arr.shift();
+      let arr2 = [10, 20, 30, 40, 50, 6, 87];
+      // console.log(arr2.slice(2, 6));
+      arr2.splice(1, 2, "arma", "deepak");
+      console.log(arr2);
+    </script>
+  </body>
+</html>

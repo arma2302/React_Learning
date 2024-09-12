@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>call,apply,bind methods</h1>
+    <script>
+      // function borrowing means using function of some other object for sother object
+
+      let obj1 = {
+        name: "Arma",
+        age: 22,
+        printDetails: function () {
+          console.log(this.name + " " + this.age);
+        },
+      };
+
+      //   obj1.printDetails();
+
+      // call() method which takes an argument reference which we wsnt thid keyword to be pointed
+
+      let obj2 = {
+        name: "Deepak",
+        age: 23,
+      };
+
+      //   obj1.printDetails.call(obj2); // function of object one is used for details of obj2 as well by using the call method
+      // another way
+
+      let print = function (city, subject) {
+        console.log(this.name + " " + this.age + " " + city + " " + subject);
+      };
+
+      print.call(obj1, "ahmedabad", "react");
+      print.call(obj2, "surat", "python");
+
+      // apply() method : the only difference  between callll and apply method is that the way we pass the arguments
+
+      print.apply(obj1, ["ahmedabad", "CSE"]);
+
+      let newFunction = print.bind(obj1, "Hello", "PHP");
+      newFunction();
+    </script>
+  </body>
+</html>

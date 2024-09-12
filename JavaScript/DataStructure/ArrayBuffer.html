@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      typesArray are mostly used fundamental Data stucture. are like normal
+      arrays but it allows to read and write raw binary Data
+    </p>
+    <p>each element in a typedArray is a raw binary data</p>
+    <p>two main components buffer and views</p>
+    <p>
+      buffers can be implemented using array buffer objects and the object
+      represent the chunk of data. and to read ,write and manipulate the data we
+      need a view.
+    </p>
+    <p>typed array methods</p>
+    <p>
+      Array buffer nothing but just a representation of object of a fixed lenht
+      binar Data, it is a actual storage of bytes
+    </p>
+    <p>
+      array buffer and typedArray are designed fr the high performance
+      operations.more sufficiant than working with the javaScript's traditional
+      data structure.
+    </p>
+    <p>
+      ArrayBuffer provides a way to manage memory directly. You can create a
+      buffer of a specific size and work with it directly, which is useful for
+      low-level data manipulation or when working with large data sets.
+    </p>
+    <div>
+      <p>Range of typedArrays</p>
+      <img src="Images/range.png" width="40%" alt="" />
+    </div>
+
+    <script>
+      let buffer = new ArrayBuffer(8);
+      let view = new Uint8Array(buffer);
+
+      view[0] = 122;
+      view[1] = 240;
+      view[2] = 2;
+      console.log(view);
+    </script>
+    <script>
+      let buffers = new ArrayBuffer(16);
+      let isView = new Uint16Array(buffers);
+
+      isView[0] = 120;
+      isView[1] = 40;
+      isView[2] = 55;
+      isView[3] = 215;
+      isView[4] = 167;
+      isView[5] = 245;
+
+      let dataView = new DataView(buffers);
+      console.log(isView);
+      console.log(dataView.getUint16(0));
+    </script>
+  </body>
+</html>

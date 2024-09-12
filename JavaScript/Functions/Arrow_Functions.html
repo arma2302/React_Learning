@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //arrow functions are the ES6 functions , it is a more concise way of writing fucntions
+
+      //basic syntax of writing a rrow function
+
+      //   const funcName = (param) => {
+      //     //function Body
+      //   };
+
+      //example
+      const newFunction = (a, b) => console.log(a + b);
+      newFunction(10, 20);
+
+      const singleParam = (a) => console.log(a);
+      singleParam(10);
+
+      const multipleArgs = (a, b) => {
+        let result = a * b;
+        return result;
+      };
+
+      console.log(multipleArgs(5, 5));
+    </script>
+  </body>
+</html>

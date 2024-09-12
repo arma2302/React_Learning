@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //function with parameters
+
+      //Default parameter
+
+      function example(a, b = 9) {
+        console.log(a * b);
+      }
+      example(2); // whenever the value of any named parameter is not defined then it will take its default valur.
+
+      // rest parameter
+
+      function restParams(...numbers) {
+        return numbers.reduce((acc, current) => acc + current);
+      }
+
+      console.log(restParams(12, 46, 90)); //12+46+90
+      console.log(restParams(12, 90)); //12+90
+      console.log(restParams(12)); //12
+
+      //parameter destructuring
+      function destructure({ name, age }) {
+        console.log(name, age);
+      }
+
+      let obj = { name: "arma", age: 20 };
+      destructure(obj);
+
+      //parameter usage
+      function params(name, age, ...subject) {
+        console.log(
+          `name: ${name}`,
+          `age:${age}`,
+          `Subject:${subject.join(",")}`
+        );
+      }
+      params("arma", 22, "React", "Node");
+    </script>
+  </body>
+</html>

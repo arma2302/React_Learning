@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // a function which is passed to another function a san argument is called as  callback function
+      //In simple words, If we want to execute a function right after the return of some other function, then callbacks can be used.
+      function callback() {
+        console.log("Hello i am a callback function");
+      }
+      function HOF(callback) {
+        return callback;
+      }
+      HOF(callback());
+
+      // another example
+
+      function showChars(name) {
+        return console.log(
+          `the name is ${name} and it is ${name.length} chars long`
+        );
+      }
+
+      function display(name, callback) {
+        return callback(name);
+      }
+
+      display("arma", showChars);
+
+      /// settimeout
+
+      //   function greet() {
+      //     console.log("Hello");
+      //   }
+
+      //   setTimeout(greet, 2000);
+
+      // Callback Function Example
+      function greet(name, myFunction) {
+        console.log("Hello world");
+
+        // callback function
+        // executed only after the greet() is executed
+        myFunction(name);
+      }
+
+      // callback function
+      function sayName(name) {
+        console.log("Hello" + " " + name);
+      }
+
+      // calling the function after 2 seconds
+      setTimeout(greet, 2000, "John", sayName);
+    </script>
+  </body>
+</html>

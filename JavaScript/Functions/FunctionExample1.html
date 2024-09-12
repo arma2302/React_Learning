@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      functions are the heart of javascript, using function keyword we can
+      declare functions in javascript <br />
+      function declaration and function expressions there are two types <br />
+      whenever the function is declared it is not executed immidiately, they are
+      executed when invoked. <br />
+      1. Function declaration <br />
+      2. Function expressions <br />
+      3. IIFE (immidiately invoked function expression)
+    </p>
+    <script>
+      //function declaration
+      function greet() {
+        console.log("Hello");
+      }
+      greet();
+
+      // function expression
+
+      let newFun = function () {
+        console.log("function exp");
+      };
+      newFun();
+
+      // IIFE
+      (function () {
+        console.log("IIFE");
+      })();
+    </script>
+  </body>
+</html>
