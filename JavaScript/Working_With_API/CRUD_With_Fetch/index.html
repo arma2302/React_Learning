@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- styles -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+      }
+      img {
+        width: 100%;
+      }
+      .container {
+        width: 80%;
+        padding: 10px;
+        margin: 0 auto;
+      }
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+      }
+      .modal {
+        background-color: white;
+        height: 200px;
+        width: 400px;
+        position: fixed;
+        top: 50%;
+        left: 40%;
+        box-shadow: 1px -1px 13px 4px #22222273;
+        padding: 10px;
+        opacity: 0;
+      }
+      .modal-open {
+        opacity: 1;
+      }
+      .modal p {
+        position: fixed;
+        bottom: 30%;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <button class="add" onclick="addData()">Add</button>
+        <div class="row"></div>
+        <div class="modal">
+          <input type="text" placeholder="Enter Name" id="name" value="" />
+
+          <input type="email" placeholder="Enter Email" id="email" value="" />
+
+          <button type="submit" onclick="createData()">Submit</button>
+          <button onclick="updateData()">Update</button>
+          <p onclick="closeModal()">close</p>
+        </div>
+      </div>
+      <!-- script added here -->
+      <script src="main.js"></script>
+    </section>
+  </body>
+</html>
