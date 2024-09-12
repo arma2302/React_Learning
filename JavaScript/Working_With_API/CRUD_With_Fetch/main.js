@@ -21,11 +21,6 @@ function addData() {
 }
 
 const createData = async () => {
-  if (!email.value || !nameInput.value) {
-    alert("Please fill in all fields");
-    return;
-  }
-
   let jsonData = {
     email: email.value,
     first_name: nameInput.value,
@@ -100,11 +95,6 @@ const showData = (dataArray) => {
 };
 
 const updateData = async () => {
-  if (!email.value || !nameInput.value || !currentEditId) {
-    alert("Please fill in all fields and select a user to edit");
-    return;
-  }
-
   let jsonData = {
     email: email.value,
     first_name: nameInput.value,
