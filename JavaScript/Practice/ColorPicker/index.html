@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>color picker</title>
+    <style></style>
+  </head>
+  <body>
+    <div class="color-picker">
+      <input type="color" id="color" name="color" value="#ff000" />
+      <div class="color-info">
+        <p>HEX: <span id="hexValue">#ff0000</span></p>
+        <button id="btn">apply</button>
+      </div>
+    </div>
+    <script>
+      let colorInp = document.getElementById("color");
+
+      colorInp.addEventListener("input", function () {
+        const color = this.value;
+        let hexValue = document.getElementById("hexValue");
+        hexValue.textContent = color;
+        console.log("hex", hexValue, color);
+      });
+      document.getElementById("btn").addEventListener("click", function () {
+        let color = document.getElementById("hexValue").textContent;
+        document.body.style.backgroundColor = color;
+      });
+    </script>
+    <script src="main.js"></script>
+  </body>
+</html>

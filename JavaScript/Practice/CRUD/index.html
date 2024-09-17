@@ -11,10 +11,10 @@
         box-sizing: border-box;
       }
       .task-card {
-        width: 50%;
-        margin-right: 20px;
+        width: 100%;
+        margin-bottom: 50px;
         padding: 20px;
-        border: 1px solid #333;
+        border: 1px solid #f6ecec;
         /* box-shadow: 2px 2px 5px #11111151; */
         max-height: 200px;
       }
@@ -53,18 +53,10 @@
               />
             </div>
             <div class="mb-3">
-              <label
-                for="formGroupExampleInput2"
-                class="form-label"
-                id="dueDate"
-                >Due Date</label
+              <label for="formGroupExampleInput2" class="form-label"
+                >Date</label
               >
-              <input
-                type="date"
-                class="form-control"
-                id="dueDate "
-                placeholder="Enter Date"
-              />
+              <input type="date" class="form-control" id="dueDate" />
             </div>
             <select
               class="form-select mb-4"
@@ -109,7 +101,7 @@
             <option value="Completed">Completed</option>
           </select>
           <div
-            class="taskContainer d-flex justify-content-between align-items-center w-100"
+            class="taskContainer d-flex justify-content-between align-items-center w-100 flex-wrap"
           ></div>
         </div>
       </div>

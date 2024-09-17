@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        max-width: 1080px;
+        padding: 10px;
+        margin: 0 auto;
+      }
+      .color-palette {
+        width: 17%;
+        /* display: none; */
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        padding: 5px;
+        margin: 0 auto;
+        top: 10px;
+        left: 10px;
+        position: fixed;
+        z-index: 1111111;
+        background-color: white;
+      }
+      .palette {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 5px;
+        gap: 10px;
+      }
+      .palette div {
+        width: 69px;
+        padding: 20px;
+        font-size: 10px;
+      }
+      .turquoise {
+        background: #70c9b7;
+      }
+      .emerland {
+        background: #66635b;
+      }
+      .peterriver {
+        background: #a59e8c;
+      }
+      .amethyst {
+        background: #4c5760;
+      }
+      .wetasphalt {
+        background: #593d3b;
+      }
+      .greensea {
+        background: #598392;
+      }
+      .nephritis {
+        background: #cc7178;
+      }
+      .belizehole {
+        background: #84a98c;
+      }
+      .wisteria {
+        background: #d3bcc0;
+      }
+      .midnightblue {
+        background: #6a381f;
+      }
+      .sunflower {
+        background: #f9c74f;
+      }
+      .carrot {
+        background: #a53860;
+      }
+      .alizarin {
+        background: #cce3de;
+      }
+      .clouds {
+        background: #c3a995;
+        color: #999;
+      }
+      .concrete {
+        background: #2c6e49;
+      }
+      .orange {
+        background: #be97c6;
+      }
+      .pumpkin {
+        background: #2e294e;
+      }
+      .pomegranate {
+        background: #cc7178;
+      }
+      .silver {
+        background: #1d2d44;
+      }
+      .asbestos {
+        background: #7c6a0a;
+      }
+      .btns {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+      }
+      .select {
+        padding: 10px 25px;
+        background-color: #27ae60;
+        font-size: 12px;
+        border: none;
+        border-radius: 10px;
+        color: white;
+      }
+      .cancle {
+        padding: 10px 25px;
+        background-color: #3c3c3c;
+        font-size: 12px;
+        border: none;
+        border-radius: 10px;
+        color: white;
+      }
+      .small-div {
+        width: 60px;
+        height: 40px;
+
+        border: 2px solid #000000;
+        outline: 2px solid #cb3e53;
+
+        position: fixed;
+        top: 4%;
+        right: 10%;
+        background-color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="small-div" onclick="toggle()"></div>
+        <div class="color-palette">
+          <div class="btns">
+            <button class="select" onclick="onSelect()">Select</button>
+            <p>Pick a color</p>
+            <button class="cancle" onclick="onCancle()">cancle</button>
+          </div>
+          <div class="palette">
+            <div class="turquoise"></div>
+            <div class="emerland"></div>
+            <div class="peterriver"></div>
+            <div class="amethyst"></div>
+            <div class="wetasphalt"></div>
+            <div class="greensea"></div>
+            <div class="nephritis"></div>
+            <div class="belizehole"></div>
+            <div class="wisteria"></div>
+            <div class="midnightblue"></div>
+            <div class="sunflower"></div>
+            <div class="carrot"></div>
+            <div class="alizarin"></div>
+            <div class="clouds"></div>
+            <div class="concrete"></div>
+            <div class="orange"></div>
+            <div class="pumpkin"></div>
+            <div class="pomegranate"></div>
+            <div class="silver"></div>
+            <div class="asbestos"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="main.js"></script>
+  </body>
+</html>
