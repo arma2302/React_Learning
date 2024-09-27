@@ -11,9 +11,17 @@
     />
     <!-- stylesheet is linkd here -->
     <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- responsive  stylesheet is linked here-->
+
+    <link rel="stylesheet" href="assets/css/responsive.css" />
   </head>
   <body>
     <!-- header -->
+
+    <div class="scroll">
+      <div class="scroll-bar" id="scroll-progress"></div>
+    </div>
+
     <header>
       <div class="logo">
         <h2>TaskBoard</h2>
@@ -22,7 +30,7 @@
         <i class="fa-solid fa-magnifying-glass"></i>
         <input
           type="text"
-          id="serach"
+          id="search"
           placeholder="Search Task by title or assignee"
         />
       </div>
@@ -36,54 +44,90 @@
 
     <!-- container -->
     <div class="container">
-      <!-- aside bar -->
-      <aside>
-        <div class="sidebar">
-          <ul>
-            <li><i class="fa-solid fa-house"></i>Home</li>
-            <li id="open-modal-btn">
-              <i class="fa-solid fa-pen-to-square"></i>Create a new Task
-            </li>
+      <div class="main">
+        <!-- aside bar -->
+        <aside>
+          <div class="sidebar">
+            <ul>
+              <li><i class="fa-solid fa-house"></i>Home</li>
+              <li id="open-modal-btn">
+                <i class="fa-solid fa-pen-to-square"></i>Create
+              </li>
+            </ul>
+          </div>
+        </aside>
+        <div class="task-wrapper">
+          <div class="menu">
+            <h2>All Tasks</h2>
+            <h2>
+              <a
+                href="#members
+          "
+                >See All the Members</a
+              >
+            </h2>
+            <select name="" id="filter">
+              <option value="">Filter</option>
+              <option value="Pending">Pending Tasks</option>
+              <option value="Completed">completed Tasks</option>
+              <option value="In-process">In-process Tasks</option>
+              <option value="Delayed">Delayed Tasks</option>
+            </select>
+          </div>
+          <div class="task-category">
+            <div class="priority-task catogary-item">
+              <div class="icon">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+              <div class="category-content">
+                <a href="#catogary" id="high" class="category-btn">See Tasks</a>
+                <h3>Priority Tasks</h3>
+              </div>
+            </div>
+            <div class="pending-task catogary-item">
+              <div class="icon">
+                <i class="fa-regular fa-hourglass-half"></i>
+              </div>
+              <div class="category-content">
+                <a href="#catogary" id="pending" class="category-btn"
+                  >See Tasks</a
+                >
+                <h3>Pending Tasks</h3>
+              </div>
+            </div>
+            <div class="completed-task catogary-item">
+              <div class="icon">
+                <i class="fa-solid fa-calendar-check"></i>
+              </div>
+              <div class="category-content">
+                <a href="#catogary" id="completed" class="category-btn"
+                  >See Tasks</a
+                >
+                <h3>Completed Tasks</h3>
+              </div>
+            </div>
+          </div>
+          <!-- task display wrapper -->
+          <ul class="task-listing" id="catogary">
+            <!-- task item -->
           </ul>
         </div>
-      </aside>
-      <div class="task-wrapper">
-        <h2>All Tasks</h2>
-        <div class="task-category">
-          <div class="priority-task catogary-item">
-            <div class="icon">
-              <i class="fa-solid fa-chart-line"></i>
-            </div>
-            <div class="category-content">
-              <a href="#" id="category-btn">See Tasks</a>
-              <h3>Priority Tasks</h3>
-            </div>
-          </div>
-          <div class="pending-task catogary-item">
-            <div class="icon">
-              <i class="fa-regular fa-hourglass-half"></i>
-            </div>
-            <div class="category-content">
-              <a href="#" id="category-btn">See Tasks</a>
-              <h3>Pending Tasks</h3>
-            </div>
-          </div>
-          <div class="completed-task catogary-item">
-            <div class="icon">
-              <i class="fa-solid fa-calendar-check"></i>
-            </div>
-            <div class="category-content">
-              <a href="#" id="category-btn">See Tasks</a>
-              <h3>Completed Tasks</h3>
-            </div>
-          </div>
-        </div>
-        <!-- task display wrapper -->
-        <ul class="task-listing">
-          <!-- task item -->
+      </div>
+      <!-- members -->
+      <div class="team-members" id="members">
+        <p>all the members</p>
+        <ul>
+          <li class="member" id="member1">Member1</li>
+          <li class="member" id="member2">Member2</li>
+          <li class="member" id="member3">Member3</li>
         </ul>
+
+        <div class="member-task">
+          <table class="list-table"></table>
+        </div>
       </div>
     </div>
+
     <!-- modal -->
     <div class="modal-wrapper">
       <div class="modal">
@@ -131,7 +175,7 @@
       </button>
     </div>
     <!--status modal-->
-    <div class="status-modal">
+    <!-- <div class="status-modal">
       <div class="status-modal-content">
         <div>
           <label for="status">Select status for this task</label>
@@ -140,14 +184,16 @@
             <option value="Pending">Pending</option>
             <option value="Delayed">Delayed</option>
             <option value="In-process">In-process</option>
-            <option value="Compelted">Compelted</option>
+            <option value="Completed">Completed</option>
           </select>
         </div>
 
         <button id="save-btn">Save</button>
       </div>
-    </div>
+    </div> -->
+    <dialog></dialog>
   </body>
   <!-- script is linked here -->
-  <script src="assets/js/script1.js"></script>
+  <script src="assets/js/script.js"></script>
+  <!-- <script src="assets/js/dupe3.js"></script> -->
 </html>

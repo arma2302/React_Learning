@@ -1,0 +1,6 @@
+    <a
+                href="#"
+                id="status-btn"
+                onclick="taskManager.statusCheck(${task.id})"
+                >change status</a
+              >

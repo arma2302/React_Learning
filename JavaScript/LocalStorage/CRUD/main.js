@@ -35,7 +35,10 @@ const handleDelete = (id) => {
   allBookdata = allBookdata.filter((data) => {
     return data.id != id;
   });
-  localStorage.setItem("bookData", JSON.stringify(allBookdata));
+  localStorage.setItem(
+    "bookData",
+    JSON.stringihandleDateValidationfy(allBookdata)
+  );
   handleDisplayData();
 };
 
