@@ -1,0 +1,16 @@
+what is react?
+-React was invented by Facebook developers
+-The current stable version of ReactJS is 18.2.0, released on June 14, 2022.
+-The library continues to evolve, introducing new features with each update.
+- react uses a virtual dom instaed of using the real dom w, which optimize the performace after render
+-It performs necessary manipulations within this virtual representation before applying changes to the actual browser
+
+
+
+what arevthe features of React Js ?
+components ,JSX, State and props, virtual dom,single-page-applications
+
+components: components are block of code , we can derived our web page in multiple components,each component is a part of UI design,which has its own logic  and design,So the component logic which is written in JavaScript makes it easy and run faster and can be reusable.
+JSX: JavaScript xml is a syntax which allows us to write html in our javascript 
+
+virtual-dom : it is a lightweighted copy of actual Dom, when changes occur it changes only the specific  part of the virtual dom and then it updates the actual dom.
