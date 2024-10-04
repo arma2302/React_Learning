@@ -6,7 +6,7 @@ import ClassComponentExample4 from "./AllClassComponents/ClassComponentExample4"
 import ComponentDidMount from "./AllClassComponents/LIfeCycleMethods/ComponentDidMount";
 import ComponentDidUpdate from "./AllClassComponents/LIfeCycleMethods/ComponentDidUpdate";
 import ComponentWillUnMount from "./AllClassComponents/LIfeCycleMethods/ComponentWillUnMount";
-import Example from "./AllClassComponents/LIfeCycleMethods/Example";
+import ClassCompExample5 from "./AllClassComponents/ClassCompExample5";
 
 export default class App extends Component {
   render() {
@@ -19,7 +19,7 @@ export default class App extends Component {
         <ComponentDidMount />
         <ComponentDidUpdate />
         <ComponentWillUnMount />
-        <Example />
+        <ClassCompExample5 />
       </div>
     );
   }
