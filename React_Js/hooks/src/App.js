@@ -6,6 +6,7 @@ import UseRefExample1 from "./HooksExamples/UseRefExample1";
 import UseCallBackExample1 from "./HooksExamples/UseCallBackExample1";
 import UseCallBackExample2 from "./HooksExamples/UseCallBackExample2";
 import Main from "./HooksExamples/ApiCRUD/Main";
+import MainComp from "./HooksExamples/ApiCRUD/API_Methods/MainComp";
 
 export default function App() {
   return (
@@ -21,7 +22,7 @@ export default function App() {
       {/* <UseCallBackExample1 /> */}
       {/* <UseCallBackExample2 /> */}
       {/* API CRUD Example  */}
-      <Main />
+      <MainComp />
     </div>
   );
 }
