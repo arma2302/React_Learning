@@ -1,0 +1,48 @@
+.pending {
+  color: black;
+}
+.active {
+  color: green;
+}
+nav {
+  background-color: #333;
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+nav li a {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease-in;
+  padding: 10px;
+}
+nav li a.active {
+  color: green;
+  background-color: white;
+}
+.hero {
+  background-color: #333;
+  color: #fff;
+  font-size: 18px;
+  padding: 20px;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+button {
+  margin-top: auto;
+}

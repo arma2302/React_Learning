@@ -1,0 +1,35 @@
+what is router in react js?
+React Router is used to implement routing in React applications. It is a collection of navigational components within your application. 
+it is  arouting and navigation library in react js .
+
+In v6.4, new routers were introduced that support the new data APIs:
+
+createBrowserRouter
+createMemoryRouter
+createHashRouter
+createStaticRouter 
+
+The following routers do not support the data APIs:
+
+<BrowserRouter>
+<MemoryRouter>
+<HashRouter>
+<NativeRouter>
+<StaticRouter>
+
+
+
+starting with BrowserRouter:
+A <BrowserRouter> stores the current location in the browser's address bar using clean URLs and navigates using the browser's built-in history stack.
+
+
+MemoryRouter:
+A <MemoryRouter> stores its locations internally in an array. Unlike <BrowserHistory> and <HashHistory>, 
+it isn't tied to an external source, like the history stack in a browser. 
+This makes it ideal for scenarios where you need complete control over the history stack, like testing.
+
+HashRouter:
+<HashRouter> is for use in web browsers when the URL should not (or cannot) be sent to the server for some reason.
+
+StaticRouter:
+<StaticRouter> is used to render a React Router web app in node. Provide the current location via the location prop.
