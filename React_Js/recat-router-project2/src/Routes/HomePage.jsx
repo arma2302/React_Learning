@@ -21,11 +21,11 @@ export default function HomePage() {
   return (
     <div>
       <header className="flex items-center justify-between bg-slate-50 p-6">
-        <div className="search w-96">Search</div>
+        <div className="search w-96 hidden sm:block">Search</div>
         {/* Navigation bar */}
         <nav>
-          <ul className="flex justify-center">
-            <li className="mx-4">
+          <ul className="flex sm:justify-center justify-between w-full">
+            <li className="mx-4 ">
               <NavLink
                 to="/"
                 className={({ isActive, isPending }) =>

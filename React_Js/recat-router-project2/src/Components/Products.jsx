@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getProducts, getCartData, addToCart } from "../services"; // Ensure addToCart is imported
+import { getProducts, getCartData, addToCart, getProduct } from "../services"; // Ensure addToCart is imported
 import { Link, NavLink, useLoaderData, useNavigate } from "react-router-dom";
 import AddCartBtn from "./AddCartBtn";
 
@@ -42,7 +42,7 @@ export default function Products() {
 
   return (
     <>
-      <div className="flex items-center justify-between flex-wrap">
+      <div className="flex items-center sm:justify-between flex-wrap justify-center">
         {loading && <p>Loading...</p>}
         {!loading &&
           data &&

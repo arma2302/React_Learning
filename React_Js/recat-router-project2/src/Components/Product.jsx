@@ -1,29 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { addToCart, getCartData, getProduct } from "../services";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import AddCartBtn from "./AddCartBtn";
 
 // Loader for fetching a single product based on product ID
 export const singelProductLoader = async ({ params }) => {
   const { result } = await getProduct(params.prodId);
+
   return result;
 };
 
 export default function Product() {
-  const product = useLoaderData(); // Load product data via React Router
-  const [loading, setLoading] = useState(false); // Manage loading state for adding to cart
-  const [isInCart, setIsInCart] = useState(false); // State to check if product is already in the cart
-  const navigate = useNavigate();
+  const product = useLoaderData();
 
-  // Function to check if a product is already in the cart
-  const isProductInCart = (productId) => {
-    return cartItems.some((item) => item.id === productId);
-  };
-
-  // Update cart items state when a product is added
-  const handleAddToCart = (product) => {
-    addToCart(product); // Assuming this function adds the product to the cart
-    fetchCartData(); // Refresh the cart data
+  const isProductInCart = (prodId) => {
+    const cartItems = getCartData().cartData;
+    return cartItems.some((item) => item.id === prodId);
   };
 
   return (
@@ -40,7 +32,6 @@ export default function Product() {
             </p>
             <AddCartBtn
               product={product}
-              onAddToCart={handleAddToCart}
               disabled={isProductInCart(product.id)} // Disable if already in cart
             >
               Add To Cart

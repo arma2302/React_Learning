@@ -31,7 +31,7 @@ const LoginPage = () => {
       <h1 className="text-4xl text-center m-4">Login</h1>
       <form
         onSubmit={handleLogin}
-        className=" rounded  shadow-slate-950 bg-gray-100 flex flex-col gap-4 justify-center items-center p-4 w-1/2 mx-auto"
+        className=" rounded  shadow-slate-950 bg-gray-100 flex flex-col gap-4  items-center p-4 sm:w-1/2  w-full mx-auto h-96"
       >
         <input
           type="text"
@@ -52,7 +52,7 @@ const LoginPage = () => {
         <button
           type="submit"
           disabled={loading}
-          className="bg-violet-400 w-56 rounded py-2 hover:bg-violet-800"
+          className="bg-violet-400 sm:w-56 rounded py-2 hover:bg-violet-800 mt-auto w-24"
         >
           {loading ? "Loading..." : "Login"}
         </button>

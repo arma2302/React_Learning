@@ -67,6 +67,13 @@ export default function Cart() {
     localStorage.removeItem("cart");
   };
 
+  const removeItemFromCart = (id) => {
+    const updatedCratData = data.filter((item) => item.id !== id);
+    console.log(updatedCratData);
+
+    localStorage.setItem("cart", JSON.stringify(updatedCratData));
+    refreshCart();
+  };
   return (
     <>
       <section className="h-screen bg-gray-100 py-12 sm:py-16 lg:py-20">
@@ -131,24 +138,11 @@ export default function Cart() {
 
                               <div className="absolute top-0 right-0 flex sm:bottom-0 sm:top-auto">
                                 <button
+                                  onClick={() => removeItemFromCart(e.id)}
                                   type="button"
                                   className="flex rounded p-2 text-center text-gray-500 transition-all duration-200 ease-in-out focus:shadow hover:text-gray-900"
                                 >
-                                  <svg
-                                    className="h-5 w-5"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                  >
-                                    <path
-                                      strokeLinecap="round"
-                                      strokeLinejoin="round"
-                                      strokeWidth="2"
-                                      d="M6 18L18 6M6 6l12 12"
-                                      className=""
-                                    ></path>
-                                  </svg>
+                                  Remove Item
                                 </button>
                               </div>
                             </div>
