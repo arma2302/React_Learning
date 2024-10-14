@@ -1,25 +1,73 @@
-import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { NavLink, Outlet } from "react-router-dom";
+import { getCartData } from "../Auth"; // Assuming `getCartData` fetches the cart items
 
 export default function HomePage() {
+  const [loading, setLoading] = useState(false); // Loading state for overall UI
+  const [cart, setCart] = useState([]); // Store cart data
+
+  // Function to fetch cart data
+  const refreshCart = () => {
+    setLoading(true); // Show loader while cart data is being fetched
+    const cartData = getCartData().cartData; // Fetch cart data (assuming from localStorage or API)
+    setCart(cartData);
+    setLoading(false); // Stop loader after fetching data
+  };
+
+  useEffect(() => {
+    refreshCart(); // Refresh cart when the component mounts
+  }, []);
+
   return (
     <div>
-      <h1 className="text-center text-2xl text-blue-900">Home Page </h1>
-      <nav>
-        <ul className="flex justify-center">
-          <li className="mx-4">
-            <Link to="/">Home</Link>
-          </li>
+      <header className="flex items-center justify-between bg-slate-50 p-6">
+        <div className="search w-96">Search</div>
+        {/* Navigation bar */}
+        <nav>
+          <ul className="flex justify-center">
+            <li className="mx-4">
+              <NavLink
+                to="/"
+                className={({ isActive, isPending }) =>
+                  isPending ? "" : isActive ? "text-green-500" : ""
+                }
+              >
+                Home
+              </NavLink>
+            </li>
+            <li className="mx-4">
+              <NavLink
+                to="/logOut"
+                className={({ isActive, isPending }) =>
+                  isPending ? "" : isActive ? "text-green-500" : ""
+                }
+              >
+                LogOut
+              </NavLink>
+            </li>
+            <li className="mx-4">
+              <NavLink
+                to="/cart"
+                className={({ isActive, isPending }) =>
+                  isPending ? "" : isActive ? "text-green-500" : ""
+                }
+              >
+                {/* Change button based on cart state */}
+                {loading ? (
+                  <span>Loading...</span>
+                ) : cart.length > 0 ? (
+                  <span>Cart ({cart.length})</span> // Display number of items in cart
+                ) : (
+                  <span>Cart</span> // Show default cart button if empty
+                )}
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
+      </header>
 
-          <li className="mx-4">
-            <Link to="/logOut">LogOut</Link>
-          </li>
-          <li className="mx-4">
-            <Link to="/cart">Cart</Link>
-          </li>
-        </ul>
-      </nav>
-      <div>
+      {/* Outlet to render child components */}
+      <div className="p-6 bg-neutral-200">
         <Outlet />
       </div>
     </div>
