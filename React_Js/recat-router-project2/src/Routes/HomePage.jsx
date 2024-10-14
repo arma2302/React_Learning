@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { NavLink, Outlet } from "react-router-dom";
-import { getCartData } from "../Auth"; // Assuming `getCartData` fetches the cart items
+import { NavLink, Outlet, redirect } from "react-router-dom";
+import { getCartData } from "../services"; // Assuming `getCartData` fetches the cart items
 
 export default function HomePage() {
   const [loading, setLoading] = useState(false); // Loading state for overall UI
@@ -37,7 +37,7 @@ export default function HomePage() {
             </li>
             <li className="mx-4">
               <NavLink
-                to="/logOut"
+                to="/login"
                 className={({ isActive, isPending }) =>
                   isPending ? "" : isActive ? "text-green-500" : ""
                 }

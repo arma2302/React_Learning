@@ -97,7 +97,13 @@ export const addItem = (id) => {
   if (existingItem) {
     // Update the item's quantity by mapping over the cart
     const updatedData = cartData.map(
-      (item) => (item.id == id ? { ...item, q: item.q + 1 } : item) // Return the full item, not just item.q
+      (item) =>
+        item.id == id
+          ? {
+              ...item,
+              q: item.q + 1,
+            }
+          : item // Return the full item, not just item.q
     );
 
     // Save the updated cart data to localStorage
@@ -129,4 +135,13 @@ export const removeItem = (id) => {
   } else {
     console.log("Product not found in cart.");
   }
+};
+
+export const calculateTotalAmount = () => {
+  const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+  console.log(cartItems);
+
+  return cartItems.reduce((total, item) => {
+    return total + item.price * item.q; // Assuming each item has a price and quantity
+  }, 0);
 };
