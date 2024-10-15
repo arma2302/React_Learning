@@ -11,7 +11,6 @@ export default function ViewProduct() {
 
   return (
     <div>
-      <h1>Displaying All the products we have </h1>
       <section>
         {error && <p>{error}</p>}
         {loading && <p>Loading......</p>}

@@ -1,6 +1,11 @@
 import React from "react";
 import Router from "./Router";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter,
+  createBrowserRouter,
+  Route,
+  Routes,
+} from "react-router-dom";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import ContactUs from "./Pages/ContactUs";
@@ -12,7 +17,6 @@ import Products from "./Components/Products";
 import ViewProduct from "./Components/ViewProduct";
 
 export default function App() {
-  // return <Router />;
   return (
     <BrowserRouter>
       <div>

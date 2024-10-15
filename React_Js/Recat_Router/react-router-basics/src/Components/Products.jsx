@@ -8,7 +8,7 @@ export default function Products() {
   return (
     <div>
       <h1 className="text-2xl p-6 text-center">
-        Displaying All the products we have{" "}
+        Displaying All the products we have
       </h1>
 
       <section>
@@ -17,7 +17,7 @@ export default function Products() {
         {products &&
           products.map((e, i) => {
             return (
-              <div class="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
+              <div class="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md ">
                 <a
                   class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl"
                   href="#"
