@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, Outlet, redirect } from "react-router-dom";
-import { getCartData } from "../services"; // Assuming `getCartData` fetches the cart items
+import { getCartData } from "../services"; 
 
 export default function HomePage() {
-  const [loading, setLoading] = useState(false); // Loading state for overall UI
+  const [loading, setLoading] = useState(false); // Loading state 
   const [cart, setCart] = useState([]); // Store cart data
 
   // Function to fetch cart data
   const refreshCart = () => {
     setLoading(true); // Show loader while cart data is being fetched
-    const cartData = getCartData().cartData; // Fetch cart data (assuming from localStorage or API)
+    const cartData = getCartData().cartData; 
     setCart(cartData);
     setLoading(false); // Stop loader after fetching data
   };

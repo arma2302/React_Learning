@@ -36,7 +36,7 @@ export default function Products() {
 
   // Update cart items state when a product is added
   const handleAddToCart = (product) => {
-    addToCart(product); // Assuming this function adds the product to the cart
+    addToCart(product); 
     fetchCartData(); // Refresh the cart data
   };
 

@@ -30,7 +30,7 @@ export default function Cart() {
     setLoading(false); // Turn off loading after data is set
   };
 
-  // Fetch cart data when component mounts
+  // Fetch cart data 
   useEffect(() => {
     refreshCart();
   }, []);

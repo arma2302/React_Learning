@@ -1,5 +1,5 @@
 import React from "react";
-import { addToCart } from "../services"; // Ensure this is the correct path to your service
+import { addToCart } from "../services"; 
 
 export default function AddCartBtn({
   product,

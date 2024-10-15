@@ -70,7 +70,6 @@ export const getCartData = () => {
 };
 
 export const addToCart = (product) => {
-  // Retrieve the cart data from localStorage or initialize it as an empty array
   const cartData = JSON.parse(localStorage.getItem("cart")) || [];
 
   // Check if the product already exists in the cart based on its id
@@ -96,14 +95,13 @@ export const addItem = (id) => {
 
   if (existingItem) {
     // Update the item's quantity by mapping over the cart
-    const updatedData = cartData.map(
-      (item) =>
-        item.id == id
-          ? {
-              ...item,
-              q: item.q + 1,
-            }
-          : item // Return the full item, not just item.q
+    const updatedData = cartData.map((item) =>
+      item.id == id
+        ? {
+            ...item,
+            q: item.q + 1,
+          }
+        : item
     );
 
     // Save the updated cart data to localStorage
@@ -124,8 +122,8 @@ export const removeItem = (id) => {
       cartData.filter((item) => item.id == !existingItem.id);
     }
     // Update the item's quantity by mapping over the cart
-    const updatedData = cartData.map(
-      (item) => (item.id == id ? { ...item, q: item.q - 1 } : item) // Return the full item, not just item.q
+    const updatedData = cartData.map((item) =>
+      item.id == id ? { ...item, q: item.q - 1 } : item
     );
 
     // Save the updated cart data to localStorage
@@ -142,6 +140,6 @@ export const calculateTotalAmount = () => {
   console.log(cartItems);
 
   return cartItems.reduce((total, item) => {
-    return total + item.price * item.q; // Assuming each item has a price and quantity
+    return total + item.price * item.q;
   }, 0);
 };
