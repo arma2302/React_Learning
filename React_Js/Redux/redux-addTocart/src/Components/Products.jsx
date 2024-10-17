@@ -1,8 +1,26 @@
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import IconButton from "@mui/material/IconButton";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addItem, fetchProducts } from "../features/Cartslice";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { ShimmerSimpleGallery } from "react-shimmer-effects";
+import { addItem } from "../features/Cartslice";
+import { getProducts } from "../features/ProductSlice";
 import AlertPopup from "./AlertPopup";
+import ProductItem from "./ProductItem";
+import { styled } from "@mui/material/styles";
+import Badge from "@mui/material/Badge";
+import zIndex from "@mui/material/styles/zIndex";
+
+const StyledBadge = styled(Badge)(({ theme }) => ({
+  "& .MuiBadge-badge": {
+    right: -3,
+    top: 13,
+    border: `2px solid ${theme.palette.background.paper}`,
+    padding: "0 4px",
+  },
+}));
+
 export default function Products() {
   const [alert, setAlert] = useState(false);
   const [cartLn, setCartLn] = useState(0);
@@ -10,7 +28,10 @@ export default function Products() {
 
   //get all the products from store
   const products = useSelector((state) => {
-    return state.product.products;
+    return state.list.products;
+  });
+  const { loading, error } = useSelector((state) => {
+    return state.list;
   });
   //get all the products of cart
   const cart = useSelector((state) => {
@@ -18,7 +39,7 @@ export default function Products() {
   });
   // fetch all the products
   useEffect(() => {
-    dispatch(fetchProducts());
+    dispatch(getProducts());
   }, []);
   // add to cart
   const addToCart = (id) => {
@@ -42,33 +63,34 @@ export default function Products() {
     <div>
       {alert && <AlertPopup setAlert={handlePOPup} />}
       <nav className="text-2xl text-center p-2 bg-gray-100">
-        <Link to={"/cart"}>Cart({cartLn})</Link>
+        <Link to={"/cart"}>Cart</Link>
+        <IconButton aria-label="cart">
+          <StyledBadge badgeContent={cartLn} color="secondary">
+            <ShoppingCartIcon />
+          </StyledBadge>
+        </IconButton>
       </nav>
 
       <div className="flex justify-between items-center flex-wrap gap-2 mx-auto mt-10 px-4">
-        {products &&
+        {products ? (
           products.map((e, i) => {
             return (
-              <div key={i} className="w-1/5 bg-gray-100 p-2">
-                <img
-                  className="w-full h-full object-cover "
-                  src={e.images[0]}
-                ></img>
-                <h1>{e.title}</h1>
-                <button
-                  onClick={() => addToCart(e)}
-                  className={`text-sm rounded px-4 ${
-                    isProductInCart(e.id)
-                      ? "bg-gray-400 cursor-not-allowed"
-                      : "bg-violet-400"
-                  }`}
-                  disabled={isProductInCart(e.id)}
-                >
-                  Add to cart
-                </button>
-              </div>
+              <ProductItem
+                key={i}
+                title={e.title}
+                id={e.id}
+                addToCart={addToCart}
+                product={e}
+                image={e.images[0]}
+                isProductInCart={isProductInCart}
+              />
             );
-          })}
+          })
+        ) : loading ? (
+          <ShimmerSimpleGallery card imageHeight={300} caption col={4} />
+        ) : (
+          <p>{error}</p>
+        )}
       </div>
     </div>
   );

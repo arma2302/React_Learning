@@ -17,34 +17,41 @@ export default function Cart() {
   }, [total, cart]);
 
   return (
-    <div className="flex mx-auto p-2  bg-sky-50 h-screen justify-center items-center">
+    <div className="flex mx-auto p-2  bg-sky-50 h-screen justify-center items-center flex-col gap-5">
       {cart.length > 0 ? (
         cart.map((e, i) => {
           return (
-            <div key={i} className="w-full">
-              <div className="w-full flex justify-start items-center">
+            <div key={i} className="w-1/3 bg-gray-300 relative">
+              <span className=" rounded-full bg-black text-white p-2 absolute -top-2 -left-2">
+                {e.q}
+              </span>
+              <div className="w-full flex items-center   gap-4">
                 {" "}
-                <img
-                  className="w-20 h-full object-cover rounded"
-                  src={e.images[1]}
-                ></img>
-                <h1>
-                  {e.title}:q:{e.q}
-                </h1>
-              </div>
-              <div className="mt-4 w-full ">
-                <button
-                  className="bg-gray-300 px-2 mr-2"
-                  onClick={() => dispatch(addQt(e.id))}
-                >
-                  +{e.q}+
-                </button>
-                <button
-                  className="bg-gray-300 px-2"
-                  onClick={() => dispatch(removeQt(e.id))}
-                >
-                  -1-
-                </button>
+                <div className="w-1/3">
+                  {" "}
+                  <img
+                    className="w-full h-full object-cover rounded"
+                    src={e.images[1]}
+                  ></img>
+                </div>
+                <div className="w-full">
+                  <h1 className="font-bold">{e.title}</h1>
+                  <span className="text-black-500">${e.price}</span>
+                  <div className="mt-4 w-full ">
+                    <button
+                      className="bg-gray-300 px-2 mr-2"
+                      onClick={() => dispatch(addQt(e.id))}
+                    >
+                      +{e.q}+
+                    </button>
+                    <button
+                      className="bg-gray-300 px-2"
+                      onClick={() => dispatch(removeQt(e.id))}
+                    >
+                      -1-
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           );
@@ -52,8 +59,6 @@ export default function Cart() {
       ) : (
         <p>Your Cart Is empty!!!!</p>
       )}
-
-      <p>Total : {totalPrice}</p>
     </div>
   );
 }

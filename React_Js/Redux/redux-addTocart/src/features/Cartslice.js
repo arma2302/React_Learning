@@ -1,19 +1,13 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const fetchProducts = createAsyncThunk("fetch", async () => {
-  const response = await axios.get("https://api.escuelajs.co/api/v1/products");
-  return response.data;
-});
-
 const initialState = {
-  products: JSON.parse(localStorage.getItem("products")) || [],
   cart: JSON.parse(localStorage.getItem("cart")) || [],
   total: null,
 };
 
 export const productReducer = createSlice({
-  name: "products",
+  name: "cart",
   initialState,
   reducers: {
     addItem: (state, action) => {
@@ -54,12 +48,6 @@ export const productReducer = createSlice({
         return totalPrice + item.price * item.q;
       }, 0);
     },
-  },
-  extraReducers: (builder) => {
-    builder.addCase(fetchProducts.fulfilled, (state, action) => {
-      state.products = action.payload;
-      localStorage.setItem("products", JSON.stringify(state.products));
-    });
   },
 });
 

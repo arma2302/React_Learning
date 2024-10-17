@@ -6,7 +6,7 @@ export default function AlertPopup({ setAlert }) {
   const [open, setOpen] = useState(true);
   return (
     <>
-      <Collapse in={open} className="absolute left-24 top-4 w-1/2">
+      <Collapse in={open} className="absolute left-24 top-4 w-1/2 ">
         <Alert
           action={
             <IconButton
