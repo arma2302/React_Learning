@@ -1,0 +1,29 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px;
+  gap: 20px;
+}
+.leftMenu {
+  width: 100%;
+}
+.rightMenu {
+  margin-left: auto;
+  width: 20%;
+}
+.rightMenu ul,
+.leftMenu ul {
+  width: 100%;
+  border-bottom: none !important;
+  justify-content: end;
+}
+.menuitem {
+  padding: 10px;
+  font-size: 18px;
+}
+.wlcm {
+  width: 20%;
+  text-transform: uppercase;
+}
